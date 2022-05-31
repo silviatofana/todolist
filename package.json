@@ -11,15 +11,15 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "git+https://github.com/JauJau088/my-webpack-biolerplate.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": ""
+        "url": "https://github.com/JauJau088/my-webpack-biolerplate/issues"
     },
-    "homepage": "",
+    "homepage": "https://github.com/JauJau088/my-webpack-biolerplate#readme",
     "devDependencies": {
         "babel-eslint": "^10.1.0",
         "css-loader": "^6.7.1",
