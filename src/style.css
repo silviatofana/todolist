@@ -1,1 +1,68 @@
 /* CSS */
+
+html {
+  box-sizing: border-box;
+}
+
+#list-container {
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid rgba(220, 220, 220, 1);
+  width: 500px;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(150, 150, 150, 0.25);
+}
+
+.list-head {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  padding: 0 1rem;
+}
+
+#icon {
+  color: gray;
+}
+
+.input {
+  border: none;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  font-style: italic;
+}
+
+.list {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  border-top: 1px solid rgba(220, 220, 220, 1);
+  padding: 0 1rem;
+}
+
+.list p {
+  margin-left: 1rem;
+}
+
+a {
+  margin-left: auto;
+  color: gray;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  background-color: rgb(238, 238, 238);
+}
+
+button {
+  border: none;
+  color: gray;
+  font-size: 1rem;
+}
