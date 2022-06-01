@@ -11,15 +11,15 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/JauJau088/my-webpack-biolerplate.git"
+      "url": ""
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/JauJau088/my-webpack-biolerplate/issues"
+      "url": ""
     },
-    "homepage": "https://github.com/JauJau088/my-webpack-biolerplate#readme",
+    "homepage": "",
     "devDependencies": {
       "@fortawesome/fontawesome-free": "^6.1.1",
       "@fortawesome/fontawesome-svg-core": "^6.1.1",
