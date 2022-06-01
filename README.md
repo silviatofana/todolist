@@ -14,7 +14,7 @@
 
 ## Link to the live page
 
-> Feel free to check the [To-do-link](https://silviatofana.github.io/todolist/).
+> Feel free to check the [To-do-link](https://silviatofana.github.io/todolist/dist/).
 
 ## Authors
 
