@@ -47,7 +47,7 @@ refresh();
 
 // Event Listeners
 Element.addList.addEventListener('keydown', (e) => {
-  if (e.code === 'Enter') {
+  if (e.key === 'Enter') {
     const val = Element.addList.value;
     if (val) {
       newTask.addTask(val);
