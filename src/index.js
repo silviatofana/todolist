@@ -1,7 +1,7 @@
 // css files here
 import './style.css';
-import TodoList from './todolist.js';
-import * as Element from './elements.js';
+import TodoList from './modules/todolist.js';
+import * as Element from './modules/elements.js';
 
 const newTask = new TodoList();
 
@@ -47,7 +47,7 @@ refresh();
 
 // Event Listeners
 Element.addList.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
+  if (e.code === 'Enter') {
     const val = Element.addList.value;
     if (val) {
       newTask.addTask(val);
