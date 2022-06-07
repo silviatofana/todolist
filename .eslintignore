@@ -1,3 +1,1 @@
-/dist/
-/docs/
-webpack.config.js
+dist/main.js

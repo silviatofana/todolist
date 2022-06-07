@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    static: './docs',
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -14,22 +14,17 @@ module.exports = {
     }),
   ],
   output: {
-    filename: '[name].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-  },
-  optimization: {
-    runtimeChunk: 'single',
+    publicPath: '/',
   },
   module: {
-    rules: [{
-      test: /\.css$/i,
-      use: ['style-loader', 'css-loader'],
-    },
-    {
-      test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      type: 'asset/resource',
-    },
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 };

@@ -4,7 +4,7 @@
   "description": "> For the second Javascript milestone in building a todo website,",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
@@ -44,7 +44,9 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "webpack-dev-middleware": "^5.3.3"
   },
   "directories": {
     "doc": "docs"

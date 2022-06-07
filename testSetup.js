@@ -1,0 +1,7 @@
+/**
+ *@jest-environment jsdom
+ */
+
+beforeAll(() => {
+
+});
