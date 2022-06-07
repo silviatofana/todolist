@@ -5,9 +5,9 @@ const addList = document.querySelector('input[name=addtext]');
 const clear = document.getElementById('clear');
 
 export {
-  listBody, 
-  checkbox, 
-  taskDescription, 
-  addList, 
+  listBody,
+  checkbox,
+  taskDescription,
+  addList,
   clear,
 };
