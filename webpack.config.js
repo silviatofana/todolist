@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: './docs',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -28,10 +28,6 @@ module.exports = {
     },
     {
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      type: 'asset/resource',
-    },
-    {
-      test: /\.(woff|woff2|eot|ttf|otf)$/i,
       type: 'asset/resource',
     },
     ],
