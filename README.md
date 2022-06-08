@@ -50,7 +50,7 @@ To get a local copy follow these simple steps:
 
 - Install the dev dependencies for linters run npm install.
 
-- To begin testing run npm install --save-dev jest to install the jest library
+- To install jest as your library run npm install --save-dev jest
 
 - To test whether all the tests work run npm test
 
