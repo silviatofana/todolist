@@ -30,8 +30,6 @@
 - Twitter: [@Grayce_Muthui](https://twitter.com/Grayce_Muthui)
 - LinkedIn: [@Grayce Muthui](http://www.linkedin.com/in/grayce-muthui-a17294226)
 
-## Collaborators
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -51,6 +49,10 @@ To get a local copy follow these simple steps:
 - Go to the repository folder using command prompt cd javascript-capstone.
 
 - Install the dev dependencies for linters run npm install.
+
+- To begin testing run npm install --save-dev jest to install the jest library
+
+- To test whether all the tests work run npm test
 
 ## Acknowledgments
 
