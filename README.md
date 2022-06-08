@@ -56,7 +56,7 @@ To get a local copy follow these simple steps:
 
 ### Deployment
 
-- To see thie project live here is the [link]
+- To see this project live here is the [link](https://silviatofana.github.io/todolist/)
 
 ## Acknowledgments
 
