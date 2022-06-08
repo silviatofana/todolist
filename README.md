@@ -34,7 +34,9 @@
 
 Contributions, issues, and feature requests are welcome!
 
-## Install
+## Instructions on how to conduct tests
+
+Install
 Run Linters tests
 To track linter errors locally follow these steps:
 
