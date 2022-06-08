@@ -1,92 +1,152 @@
-/* CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-html {
-  box-sizing: border-box;
+* {
+  scroll-behavior: smooth;
 }
 
-#list-container {
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  border: 1px solid rgba(220, 220, 220, 1);
-  width: 500px;
-  max-width: 500px;
-  background-color: white;
-  box-shadow: 0 0 30px rgba(150, 150, 150, 0.25);
-}
-
-.list-head {
-  display: flex;
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
   margin: 0;
+  background-color: bisque;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container h1 {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid rgba(220, 220, 220, 1);
-  padding: 0 1rem;
+  font-size: 14px;
+  height: 30px;
+  border-bottom: 0.6px solid gray;
+  padding: 3px 15px;
 }
 
-#icon {
-  color: gray;
-}
-
-.input {
-  border: none;
-  font-size: 1rem;
-  padding: 1rem 1rem;
-  font-style: italic;
-}
-
-.list {
+.container ul {
   display: flex;
-  align-items: baseline;
-  border-bottom: 1px solid rgba(220, 220, 220, 1);
-  border-top: 1px solid rgba(220, 220, 220, 1);
-  padding: 1rem 1rem;
+  flex-direction: column;
 }
 
-.list p {
-  margin-left: 1rem;
-}
-
-i {
-  margin-left: auto;
-  color: gray;
-}
-
-.hide {
-  display: none;
-}
-
-.button {
+.container li {
+  padding: 3px 15px 3px 15px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.6px solid gray;
+  height: 40px;
+}
+
+.container li.checked {
+  text-decoration: line-through;
+}
+
+.taskList input[type="text"].active,
+.container li.active {
+  background: #dfda82;
+}
+
+.container li p {
+  cursor: pointer;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.clearButton {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(220, 220, 220, 1);
-  background-color: rgb(238, 238, 238);
-}
-
-button {
-  border: none;
-  color: gray;
-  font-size: 1rem;
+  border-top: 0.6px solid gray;
+  height: 50px;
+  background-color: #ebc491;
   cursor: pointer;
 }
 
-.edit {
-  background-color: rgba(255, 235, 205);
+.container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 16px;
 }
 
-.edit input {
-  border: none;
-  background-color: rgba(255, 235, 205);
-  font-size: 1rem;
-  margin-left: 1rem;
-}
-
-input:focus {
+.container form input {
+  width: 95%;
+  height: 40px;
+  background-color: bisque;
   outline: none;
+  border: none;
+  font-size: 18px;
 }
 
-.strike {
-  text-decoration: line-through;
+.fa-trash-can,
+.fa-arrows-rotate {
+  cursor: pointer;
+}
+
+.fa-ellipsis-vertical {
+  cursor: grab;
+}
+
+.fa-ellipsis-vertical:active {
+  cursor: grabbing;
+}
+
+.fa-arrow-turn-down {
+  transform: rotate(90deg);
+  font-size: 12px;
+  color: #777776;
+  cursor: pointer;
+}
+
+.container form input::placeholder {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 10px 0 #31313159;
+}
+
+.taskList input[type="text"] {
+  background: bisque;
+  outline: none;
+  border: none;
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  .container li {
+    padding: 3px 15px;
+  }
 }

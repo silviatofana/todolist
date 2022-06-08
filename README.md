@@ -24,30 +24,51 @@
 - LinkedIn: [@silviatofana](www.linkedin.com/in/silvia-tofana-10b852186)
 - Twitter: [@silviatofana](https://twitter.com/SilviaTofana)
 
--
-## Collaborators
+👤 Grace Muthui
 
-
+- GitHub: [@Grayce Muthui](https://github.com/Graycemuthui)
+- Twitter: [@Grayce_Muthui](https://twitter.com/Grayce_Muthui)
+- LinkedIn: [@Grayce Muthui](http://www.linkedin.com/in/grayce-muthui-a17294226)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-## Getting Started
+## Instructions on how to conduct tests
 
-To get a local copy follow these simple steps:
+Install
+Run Linters tests
+To track linter errors locally follow these steps:
 
-- Copy this link .
+Download all the dependencies run:
 
-- Create a local directory that you want to clone the repository.
+npm install
+Track HTML linter errors run:
 
-- Open the command prompt in the created directory.
+npx hint .
+Track CSS linter errors run:
+
+npx stylelint "**/*.{css,scss}"
+Track JavaScript linter errors run:
+
+npx eslint ."
+Run local server
+Node live serveris easy to install and use:
+
+Run webpack server
+  npm start
 
 - On the terminal run this command git clone https://github.com/silviatofana/todolist.git.
 
-- Go to the repository folder using command prompt cd javascript-capstone.
-
 - Install the dev dependencies for linters run npm install.
+
+- To install jest as your library run npm install --save-dev jest
+
+- To test whether all the tests work run npm test
+
+### Deployment
+
+- To see this project live here is the [link](https://silviatofana.github.io/todolist/)
 
 ## Acknowledgments
 

@@ -1,92 +1,70 @@
-// css files here
 import './style.css';
-import TodoList from './modules/todolist.js';
-import * as Element from './modules/elements.js';
+import deleteTask from './modules/deleteTask.js';
+import addTask from './modules/addTask.js';
+import createLi from './modules/createLi.js';
+import loadTaskList from './modules/loadTaskList.js';
+import editTask from './modules/editTask.js';
+import { update, clearAllComplete } from './modules/update.js';
+import LocalStorage from './modules/storage.js';
 
-const newTask = new TodoList();
+const store = new LocalStorage();
+loadTaskList(store.getItems());
 
-const getCheck = (element) => ` ${
-  element.completed
-    ? `<input type="checkbox" aria-label="${element.index}" data-name="status" name="check" checked>`
-    : `<input type="checkbox" aria-label="${element.index}" data-name="status" name="check">`
-} `;
+const addToDo = document.querySelector('.addToDo');
+const form = document.querySelector('form');
 
-const showTaskItem = (element) => `<div class="list show">
-                ${getCheck(element)}                
-                <p class="taskdescription ${
-  element.completed ? 'strike' : ''
-}">${element.description}</p>
-               <i class="fa fa-ellipsis-v fa-2x menu-icon" aria-label="${
-  element.index
-}"  data-name="edit"></i>
-          </div>`;
+form.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    if (addToDo.value === '') {
+      addToDo.setCustomValidity('Please add task description.');
+    } else {
+      e.preventDefault();
+      const tasklist = store.getItems();
+      const newTask = { description: addToDo.value };
+      const updatedList = addTask(tasklist, newTask);
+      createLi(newTask);
+      addToDo.value = '';
+      store.setItems(updatedList);
+    }
+  }
+});
 
-const editDescription = (element) => `<div class="list edit">
-                 ${getCheck(element)} 
-                <input type="text" class="desc" value="${
-  element.description
-}" aria-label ="${element.index}" >
-                <i class="fa fa-trash-o fa-2x" aria-label="${
-  element.index
-}"  data-name="delete"></i>
-          </div>`;
-
-const refresh = () => {
-  const list = newTask.listArray;
-  let content = '';
-  if (list) {
-    list.forEach((element) => {
-      content += `${
-        element.edit ? editDescription(element) : showTaskItem(element)
-      }`;
+document.addEventListener('click', (e) => {
+  const tasklist = store.getItems();
+  if (e.target.matches('.fa-trash-can')) {
+    let index = e.target.parentElement.classList[0];
+    index = parseInt(index, 10);
+    const newTasklist = deleteTask(tasklist, index);
+    store.setItems(newTasklist);
+    window.location.reload();
+  } else if (e.target.matches('.taskList input[type="text"]')) {
+    const element = e.target.parentElement.querySelector('i');
+    element.classList.toggle('fa-trash-can');
+    element.classList.toggle('fa-ellipsis-vertical');
+    e.target.parentElement.classList.toggle('active');
+    e.target.classList.toggle('active');
+    e.target.addEventListener('input', (event) => {
+      let index = event.target.parentElement.classList[0];
+      index = parseInt(index, 10);
+      const input = event.target.value;
+      const editedTaskList = editTask(tasklist, index, input);
+      store.setItems(editedTaskList);
     });
+  } else if (e.target.matches('.taskList input[type="checkbox"]')) {
+    e.target.addEventListener('change', (event) => {
+      let index = event.target.parentElement.classList[0];
+      index = parseInt(index, 10);
+      const updatedList = update(tasklist, index);
+      store.setItems(updatedList);
+      if (!e.target.checked) {
+        e.target.parentElement.classList.remove('checked');
+      } else {
+        e.target.parentElement.classList.add('checked');
+      }
+    });
+  } else if (e.target.matches('.clearButton')) {
+    const filteredList = clearAllComplete(tasklist);
+    store.setItems(filteredList);
+    window.location.reload();
   }
-  Element.listBody.innerHTML = content;
-};
-refresh();
-
-// Event Listeners
-Element.addList.addEventListener('keydown', (e) => {
-  if (e.code === 'Enter') {
-    const val = Element.addList.value;
-    if (val) {
-      newTask.addTask(val);
-      Element.addList.value = '';
-      refresh();
-    }
-  }
-});
-
-Element.listBody.addEventListener('click', (e) => {
-  if (e.target.nodeName === 'I') {
-    if (e.target.dataset.name === 'edit') {
-      newTask.setEdit(e.target.ariaLabel);
-      refresh();
-    } else if (e.target.dataset.name === 'delete') {
-      newTask.removeTask(parseInt(e.target.ariaLabel, 10));
-      refresh();
-    }
-  }
-});
-
-Element.listBody.addEventListener('keydown', (e) => {
-  if (e.code === 'Enter') {
-    if (e.target.value) {
-      const id = parseInt(e.target.ariaLabel, 10);
-      newTask.editTask(id, e.target.value);
-      refresh();
-    }
-  }
-});
-
-Element.listBody.addEventListener('change', (e) => {
-  if (e.target.dataset.name === 'status') {
-    newTask.changeComplete(parseInt(e.target.ariaLabel, 10));
-    refresh();
-  }
-});
-
-Element.clear.addEventListener('click', () => {
-  newTask.clearCompleted();
-  refresh();
 });
