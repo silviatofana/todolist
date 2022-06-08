@@ -54,6 +54,10 @@ To get a local copy follow these simple steps:
 
 - To test whether all the tests work run npm test
 
+### Deployment
+
+- To see thie project live here is the [link]
+
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
