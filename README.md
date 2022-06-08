@@ -34,19 +34,29 @@
 
 Contributions, issues, and feature requests are welcome!
 
-## Getting Started
+Install
+Run Linters tests
+To track linter errors locally follow these steps:
 
-To get a local copy follow these simple steps:
+Download all the dependencies run:
 
-- Copy this link .
+npm install
+Track HTML linter errors run:
 
-- Create a local directory that you want to clone the repository.
+npx hint .
+Track CSS linter errors run:
 
-- Open the command prompt in the created directory.
+npx stylelint "**/*.{css,scss}"
+Track JavaScript linter errors run:
+
+npx eslint ."
+Run local server
+Node live serveris easy to install and use:
+
+Run webpack server
+  npm start
 
 - On the terminal run this command git clone https://github.com/silviatofana/todolist.git.
-
-- Go to the repository folder using command prompt cd javascript-capstone.
 
 - Install the dev dependencies for linters run npm install.
 
