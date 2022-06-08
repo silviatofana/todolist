@@ -24,10 +24,13 @@
 - LinkedIn: [@silviatofana](www.linkedin.com/in/silvia-tofana-10b852186)
 - Twitter: [@silviatofana](https://twitter.com/SilviaTofana)
 
--
+👤 Grace Muthui
+
+- GitHub: [@Grayce Muthui](https://github.com/Graycemuthui)
+- Twitter: [@Grayce_Muthui](https://twitter.com/Grayce_Muthui)
+- LinkedIn: [@Grayce Muthui](http://www.linkedin.com/in/grayce-muthui-a17294226)
+
 ## Collaborators
-
-
 
 ## 🤝 Contributing
 
